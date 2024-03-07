@@ -1,7 +1,8 @@
 const ShortUniqueId = require("short-unique-id");
 const URL = require("../models/url");
 
-async function handleGenerateNewShortURL(req, res) {
+//Generate New Short URL
+const handleGenerateNewShortURL = async (req, res) => {
   const body = req.body;
   if (!body || !body.url) {
     return res.status(400).json({ error: "URL is required" });
@@ -16,8 +17,9 @@ async function handleGenerateNewShortURL(req, res) {
   });
 
   return res.status(201).json({ id: UID });
-}
+};
 
+//Handle Analytics URL
 const handleURLAnalytics = async (req, res) => {
   const shortId = req.params.shortId;
 
@@ -29,6 +31,7 @@ const handleURLAnalytics = async (req, res) => {
   });
 };
 
+//Handle URL render from shortId
 const handleShortIdRender = async (req, res) => {
   const shortId = req.params.shortId;
   if (!shortId) {
