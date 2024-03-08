@@ -1,6 +1,6 @@
 const express = require("express");
-const env = require("dotenv").config();
 const app = express();
+const env = require("dotenv").config();
 const PORT = process.env.PORT || 6000;
 const urlRoute = require("./routes/url");
 const URL = require("./models/url");
