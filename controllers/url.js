@@ -15,8 +15,7 @@ const handleGenerateNewShortURL = async (req, res) => {
     redirectURL: body.url,
     visitHistory: [],
   });
-
-  return res.status(201).json({ id: UID });
+  res.render("home", { id: UID });
 };
 
 //Handle Analytics URL
